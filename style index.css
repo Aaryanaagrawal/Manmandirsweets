@@ -44,16 +44,15 @@ nav.menu {
   background-color: #d4bbfc;
   text-align: center;
   padding: 10px 0;
+  overflow-x: auto;
 }
 
 nav.menu ul {
   list-style: none;
   display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 20px;
-  padding: 0;
-  margin: 0;
+  padding: 0 10px;
+  white-space: nowrap;
 }
 
 nav.menu ul li {
@@ -95,15 +94,14 @@ section p {
 
 .image-gallery {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
-  justify-content: center;
+  gap: 10px;
 }
 
 .image-gallery img {
-  width: 30%;
-  min-width: 100px;
-  flex: 1 1 30%;
+  width: 100%;
+  max-width: 30%;
+  flex-grow: 1;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -132,22 +130,9 @@ footer {
   padding: 10px;
 }
 
-/* Responsive Styles */
+/* Responsive Design */
 @media (max-width: 768px) {
   header {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  header .logo img {
-    margin: 0 0 10px 0;
-  }
-
-  header h1 {
-    font-size: 2rem;
-  }
-
-  nav.menu ul {
     flex-direction: column;
     gap: 10px;
   }
@@ -157,7 +142,17 @@ footer {
   }
 
   .image-gallery img {
-    width: 100%;
+    max-width: 100%;
+  }
+
+  nav.menu ul {
+    justify-content: center;
+    gap: 10px;
+    overflow-x: auto;
+  }
+
+  nav.menu ul li {
+    font-size: 1rem;
   }
 
   section h2 {
